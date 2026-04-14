@@ -1,0 +1,24 @@
+[Unit]
+Description=YouTube Downloader Bot (Pyrogram / 2 GB)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/ytbot-pyrogram
+EnvironmentFile=/home/ubuntu/ytbot-pyrogram/.env
+
+ExecStart=/home/ubuntu/ytbot-pyrogram/venv/bin/python bot_session.py
+
+Restart=on-failure
+RestartSec=5
+StartLimitInterval=60
+StartLimitBurst=5
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=ytbot
+
+[Install]
+WantedBy=multi-user.target

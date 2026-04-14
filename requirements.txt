@@ -1,0 +1,4 @@
+pyrogram==2.0.106
+TgCrypto==1.2.5          # C-level crypto — makes Pyrogram much faster
+yt-dlp==2024.12.3
+aiofiles==24.1.0
